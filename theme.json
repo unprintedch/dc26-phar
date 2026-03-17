@@ -354,8 +354,20 @@
 			"name": "header"
 		},
 		{
+			"area": "header",
+			"name": "header-large-title"
+		},
+		{
 			"area": "footer",
 			"name": "footer"
+		},
+		{
+			"area": "footer",
+			"name": "footer-columns"
+		},
+		{
+			"area": "footer",
+			"name": "footer-newsletter"
 		}
 	],
 	"version": 3,
