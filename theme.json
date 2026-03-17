@@ -169,14 +169,14 @@
 			"fontFamily": true,
 			"fontFamilies": [
 				{
-					"fontFamily": "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif",
-					"name": "Body",
-					"slug": "body"
+					"fontFamily": "'DINNextLTPro', system-ui, sans-serif",
+					"name": "DINNextLTPro",
+					"slug": "din-next"
 				},
 				{
 					"fontFamily": "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif",
-					"name": "Display",
-					"slug": "display"
+					"name": "System",
+					"slug": "system"
 				}
 			],
 			"fontSizes": [
@@ -342,7 +342,7 @@
 			}
 		},
 		"typography": {
-			"fontFamily": "var(--wp--preset--font-family--body)",
+			"fontFamily": "var(--wp--preset--font-family--din-next)",
 			"fontSize": "1.3em",
 			"fontWeight": "400",
 			"lineHeight": "1.2"
