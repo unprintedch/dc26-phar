@@ -171,7 +171,33 @@
 				{
 					"fontFamily": "'DINNextLTPro', system-ui, sans-serif",
 					"name": "DINNextLTPro",
-					"slug": "din-next"
+					"slug": "din-next",
+					"fontFace": [
+						{
+							"fontFamily": "DINNextLTPro",
+							"fontStyle": "normal",
+							"fontWeight": "400",
+							"src": [ "file:./assets/fonts/DINNextLTPro/DINNextLTPro_normal_normal_400.woff2" ]
+						},
+						{
+							"fontFamily": "DINNextLTPro",
+							"fontStyle": "normal",
+							"fontWeight": "700",
+							"src": [ "file:./assets/fonts/DINNextLTPro/DINNextLTPro_normal_normal_700.woff2" ]
+						},
+						{
+							"fontFamily": "DINNextLTPro",
+							"fontStyle": "italic",
+							"fontWeight": "400",
+							"src": [ "file:./assets/fonts/DINNextLTPro/DINNextLTPro_italic_normal_400.woff2" ]
+						},
+						{
+							"fontFamily": "DINNextLTPro",
+							"fontStyle": "italic",
+							"fontWeight": "700",
+							"src": [ "file:./assets/fonts/DINNextLTPro/DINNextLTPro_italic_normal_700.woff2" ]
+						}
+					]
 				},
 				{
 					"fontFamily": "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif",

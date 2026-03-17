@@ -45,7 +45,6 @@ add_filter( 'block_categories_all', function ( array $categories ): array {
 // Editor-only styles to improve block editor visibility.
 add_theme_support('editor-styles');
 add_editor_style('css/editor-style.css');
-add_editor_style('https://cdn.fonts.net/kit/97f25718-9a35-495f-8ecf-2e3628d4746d/97f25718-9a35-495f-8ecf-2e3628d4746d_enhanced.css');
 
 /**
  * Remove "Privé :" prefix from private page titles.

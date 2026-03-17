@@ -116,34 +116,6 @@ function dc26_enqueue_styles(): void {
 }
 add_action('wp_enqueue_scripts', 'dc26_enqueue_styles');
 
-/**
- * Enqueue DINNextLTPro font (front-end + editor).
- */
-function dc26_enqueue_fonts(): void {
-	wp_enqueue_style(
-		'dc26-fonts',
-		'https://cdn.fonts.net/kit/97f25718-9a35-495f-8ecf-2e3628d4746d/97f25718-9a35-495f-8ecf-2e3628d4746d_enhanced.css',
-		[],
-		null
-	);
-}
-add_action('wp_enqueue_scripts', 'dc26_enqueue_fonts');
-add_action('enqueue_block_editor_assets', 'dc26_enqueue_fonts');
-
-/**
- * Add preconnect hint for fonts.net CDN.
- *
- * @param array<string,mixed> $hints
- * @param string              $relation_type
- * @return array<string,mixed>
- */
-function dc26_font_resource_hints( array $hints, string $relation_type ): array {
-	if ( 'preconnect' === $relation_type ) {
-		$hints[] = [ 'href' => 'https://cdn.fonts.net', 'crossorigin' => 'anonymous' ];
-	}
-	return $hints;
-}
-add_filter( 'wp_resource_hints', 'dc26_font_resource_hints', 10, 2 );
 
 /**
  * Enqueue conditionnel des assets pour les blocs spécifiques (front-end)
