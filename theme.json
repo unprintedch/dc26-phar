@@ -1,6 +1,15 @@
 {
 	"settings": {
 		"appearanceTools": true,
+		"shadow": {
+			"presets": [
+				{
+					"name": "Natural",
+					"slug": "natural",
+					"shadow": "2px 3px 6px rgba(0, 0, 0, 0.1)"
+				}
+			]
+		},
 		"blocks": {
 			"core/site-title": {
 				"typography": {
