@@ -190,3 +190,19 @@ function dc26_enqueue_accordion_tabs_front(): void {
 }
 add_action('wp_enqueue_scripts', 'dc26_enqueue_accordion_tabs_front', 20);
 
+/**
+ * Enqueue sticky header script (front).
+ */
+function dc26_enqueue_header_sticky(): void {
+  $script_path = 'scripts/header-sticky.js';
+
+  wp_enqueue_script(
+    'dc26-header-sticky',
+    get_template_directory_uri() . '/' . $script_path,
+    array(),
+    dc26_get_asset_version($script_path),
+    true
+  );
+}
+add_action('wp_enqueue_scripts', 'dc26_enqueue_header_sticky', 20);
+
