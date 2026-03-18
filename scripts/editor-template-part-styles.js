@@ -64,22 +64,28 @@
     wp.blocks.unregisterBlockStyle(blockName, styleName);
   }
 
-  function updateStyleAvailability(selectedBlock) {
-    if (!selectedBlock || selectedBlock.name !== blockName) {
-      ensureStyleRegistered();
-      return;
-    }
-
-    if (selectedBlock.attributes && selectedBlock.attributes.area === 'header') {
-      ensureStyleRegistered();
-      return;
-    }
-
-    ensureStyleUnregistered();
-  }
+  // Track last state to avoid infinite loop:
+  // unregisterBlockStyle triggers a store update → subscribe fires again
+  var lastShouldBeRegistered = null;
 
   wp.data.subscribe(function () {
     var selectedBlock = wp.data.select('core/block-editor').getSelectedBlock();
-    updateStyleAvailability(selectedBlock);
+
+    var shouldBeRegistered =
+      !selectedBlock ||
+      selectedBlock.name !== blockName ||
+      (selectedBlock.attributes && selectedBlock.attributes.area === 'header');
+
+    if (shouldBeRegistered === lastShouldBeRegistered) {
+      return;
+    }
+
+    lastShouldBeRegistered = shouldBeRegistered;
+
+    if (shouldBeRegistered) {
+      ensureStyleRegistered();
+    } else {
+      ensureStyleUnregistered();
+    }
   });
 })(window.wp);
