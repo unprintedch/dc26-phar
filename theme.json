@@ -2,6 +2,7 @@
 	"settings": {
 		"appearanceTools": true,
 		"shadow": {
+			"defaultPresets": false,
 			"presets": [
 				{
 					"name": "Natural",
