@@ -39,11 +39,6 @@ header.wp-block-template-part.is-style-sticky-header {
 .is-style-sticky-header > header.wp-block-group,
 .is-style-sticky-header > .wp-block-group {
 	width: 100%;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	gap: 1rem;
-	padding: 0.75rem 1rem;
 	background-color: transparent;
 	box-shadow: none;
 	-webkit-backdrop-filter: none;
@@ -62,12 +57,6 @@ header.wp-block-template-part.is-style-sticky-header {
 	transition: opacity 200ms ease, transform 200ms ease;
 }
 
-.is-style-sticky-header .wp-block-navigation {
-	flex: 1 1 auto;
-	min-width: 0;
-	display: flex;
-	justify-content: flex-end;
-}
 
 .is-style-sticky-header.is-top > header.wp-block-group,
 .is-style-sticky-header.is-top > .wp-block-group {

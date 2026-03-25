@@ -1,0 +1,19 @@
+{
+  "name": "dc26/slider-partners",
+  "title": "Partenaires Slider",
+  "description": "Marquee infini de logos partenaires",
+  "category": "dc26",
+  "icon": "image-rotate",
+  "keywords": ["partners", "logos", "slider", "marquee"],
+  "script": "file:./view.js",
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "render.php",
+    "blockVersion": 3
+  },
+  "supports": {
+    "align": ["wide", "full"],
+    "anchor": true,
+    "customClassName": true
+  }
+}

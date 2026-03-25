@@ -7,10 +7,15 @@
     min-width: 220px;
     padding: 0.5rem 0;
     margin-top: var(--dc26-nav-submenu-gap);
-    opacity: 0;
+    opacity: 0 !important;
     transform: translateY(6px);
-    transition: opacity 0.2s ease, transform 0.2s ease;
+    transition: opacity 0.25s ease, transform 0.25s ease !important;
     pointer-events: none;
+    /* Override WP core visibility:hidden / height:0 approach */
+    visibility: visible !important;
+    height: auto !important;
+    overflow: visible !important;
+    width: auto !important;
 }
 
 .wp-block-navigation .wp-block-navigation__submenu-container::before {
@@ -25,7 +30,16 @@
 
 .wp-block-navigation .wp-block-navigation-item:hover > .wp-block-navigation__submenu-container,
 .wp-block-navigation .wp-block-navigation-item:focus-within > .wp-block-navigation__submenu-container {
-    opacity: 1;
+    opacity: 1 !important;
     transform: translateY(0);
     pointer-events: auto;
+}
+
+/* Chevron rotation on submenu open */
+.wp-block-navigation__submenu-icon svg {
+    transition: transform 0.2s ease;
+}
+
+.wp-block-navigation-submenu__toggle[aria-expanded="true"] svg {
+    transform: rotate(180deg);
 }
