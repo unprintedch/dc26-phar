@@ -52,6 +52,21 @@
 					"slug": "gray-light"
 				},
 				{
+					"color": "#c8d4e0",
+					"name": "Gray extra light",
+					"slug": "gray-extra-light"
+				},
+				{
+					"color": "#e2eaf0",
+					"name": "Gray lighter",
+					"slug": "gray-lighter"
+				},
+				{
+					"color": "#f0f4f7",
+					"name": "Gray off-white",
+					"slug": "gray-off-white"
+				},
+				{
 					"color": "#ffffff",
 					"name": "White",
 					"slug": "white"

@@ -64,6 +64,28 @@ ul.is-style-check li::before {
   font: var(--fa-font-regular);
 }
 
+/* WP List block style variation: Hexagone check */
+ul.wp-block-list.is-style-dc26-hex-check {
+  list-style: none;
+  padding-left: 0;
+}
+
+ul.wp-block-list.is-style-dc26-hex-check li {
+  position: relative;
+  padding-left: 1.6em;
+  margin-bottom: 0.6rem;
+}
+
+ul.wp-block-list.is-style-dc26-hex-check li::before {
+  content: "";
+  position: absolute;
+  top: 0.1em;
+  left: 0;
+  width: 1em;
+  height: 1em;
+  background: url("../assets/img/hexagon-check-light-full.svg") no-repeat center / contain;
+}
+
 .is-style-badge-title {
   border: 2px solid black;
   border-radius: 9999px;

@@ -83,7 +83,7 @@ header.wp-block-template-part.is-style-sticky-header {
 .is-style-sticky-header.is-scrolled > header.wp-block-group,
 .is-style-sticky-header.is-scrolled > .wp-block-group {
 	
-	background-color: rgba(244, 244, 244, 0.4);
+	background-color: rgba(244, 244, 244, 0.25);
 	box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
 	-webkit-backdrop-filter: blur(8px);
 	backdrop-filter: blur(8px);

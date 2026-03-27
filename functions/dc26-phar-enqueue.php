@@ -9,22 +9,29 @@
 declare(strict_types=1);
 
 /**
- * Remplace le CSS/JS principal du parent par celui de phar.
+ * Enqueue CSS/JS pour phar.
+ *
+ * CSS : le parent (dc26-base) garde son handle dc26-front-styles.
+ *       phar charge ses overrides en tant que dc26-phar-styles, après le parent.
+ *
+ * JS  : phar remplace le bundle du parent — son entry point importe
+ *       tout ce dont il a besoin (y compris les modules de dc26-base).
+ *
  * Priorité 20 > priorité 10 du parent.
  */
 function dc26_phar_enqueue_styles(): void {
-    $style_path = get_stylesheet_directory() . '/build/style.css';
+    $style_path  = get_stylesheet_directory() . '/build/style.css';
     $script_path = get_stylesheet_directory() . '/build/app.js';
 
-    wp_dequeue_style('dc26-front-styles');
-    wp_deregister_style('dc26-front-styles');
+    // CSS — charger les overrides phar après le CSS parent
     wp_enqueue_style(
-        'dc26-front-styles',
+        'dc26-phar-styles',
         get_stylesheet_directory_uri() . '/build/style.css',
-        array(),
+        array('dc26-front-styles'),
         file_exists($style_path) ? (string) filemtime($style_path) : '1.0.0'
     );
 
+    // JS — remplace le bundle du parent (phar a son propre entry point)
     wp_dequeue_script('dc26-front-scripts');
     wp_deregister_script('dc26-front-scripts');
     wp_enqueue_script(
@@ -84,3 +91,17 @@ function dc26_phar_enqueue_editor_template_part_styles(): void {
     );
 }
 add_action('enqueue_block_editor_assets', 'dc26_phar_enqueue_editor_template_part_styles', 20);
+
+/**
+ * Register custom block style variations for Gutenberg.
+ */
+function dc26_phar_register_block_styles(): void {
+    register_block_style(
+        'core/list',
+        array(
+            'name'  => 'dc26-hex-check',
+            'label' => __('Hexagone check', 'dc26-phar'),
+        )
+    );
+}
+add_action('init', 'dc26_phar_register_block_styles');

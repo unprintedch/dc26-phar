@@ -4,7 +4,7 @@
 
 /* Frosted glass on scroll (override base transition) */
 header.is-style-sticky-header.is-scrolled {
-  background-color: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(4px);
+  background-color: rgba(255, 255, 255, 0.02);
   -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
 }

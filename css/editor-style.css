@@ -98,3 +98,25 @@
 	-webkit-mask: url("data:image/svg+xml,%3Csvg width='12' height='16' viewBox='0 0 12 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.88386 0C0.844795 0 0 0.844795 0 1.88386V13.187C0 14.2261 0.844795 15.0709 1.88386 15.0709H9.41931C10.4584 15.0709 11.3032 14.2261 11.3032 13.187V5.01873C11.3032 4.51833 11.106 4.03853 10.7527 3.68531L7.61493 0.550441C7.2617 0.197217 6.78485 0 6.28445 0H1.88386ZM9.58121 5.18062H6.829C6.43751 5.18062 6.12255 4.86566 6.12255 4.47417V1.72197L9.58121 5.18062Z' fill='black'/%3E%3C/svg%3E") no-repeat center / 0.75em 1em;
 	mask: url("data:image/svg+xml,%3Csvg width='12' height='16' viewBox='0 0 12 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.88386 0C0.844795 0 0 0.844795 0 1.88386V13.187C0 14.2261 0.844795 15.0709 1.88386 15.0709H9.41931C10.4584 15.0709 11.3032 14.2261 11.3032 13.187V5.01873C11.3032 4.51833 11.106 4.03853 10.7527 3.68531L7.61493 0.550441C7.2617 0.197217 6.78485 0 6.28445 0H1.88386ZM9.58121 5.18062H6.829C6.43751 5.18062 6.12255 4.86566 6.12255 4.47417V1.72197L9.58121 5.18062Z' fill='black'/%3E%3C/svg%3E") no-repeat center / 0.75em 1em;
 }
+
+/* List block style preview: Hexagone check */
+.editor-styles-wrapper ul.wp-block-list.is-style-dc26-hex-check {
+	list-style: none;
+	padding-left: 0;
+}
+
+.editor-styles-wrapper ul.wp-block-list.is-style-dc26-hex-check li {
+	position: relative;
+	padding-left: 1.6em;
+	margin-bottom: 0.6rem;
+}
+
+.editor-styles-wrapper ul.wp-block-list.is-style-dc26-hex-check li::before {
+	content: "";
+	position: absolute;
+	top: 0.1em;
+	left: 0;
+	width: 1em;
+	height: 1em;
+	background: url("../assets/img/hexagon-check-light-full.svg") no-repeat center / contain;
+}
