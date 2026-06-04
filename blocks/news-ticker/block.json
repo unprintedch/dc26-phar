@@ -1,0 +1,36 @@
+{
+  "name": "dc26/news-ticker",
+  "title": "News Ticker",
+  "description": "Bandeau de textes défilants avec animation CSS fluide.",
+  "category": "dc26",
+  "icon": "arrow-right-alt",
+  "keywords": ["ticker", "news", "défilant", "marquee", "bandeau"],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "render.php",
+    "blockVersion": 3
+  },
+  "supports": {
+    "html": false,
+    "align": ["wide", "full"],
+    "anchor": true,
+    "customClassName": true,
+    "color": {
+      "text": true,
+      "background": true,
+      "link": true
+    },
+    "typography": {
+      "fontSize": true,
+      "lineHeight": true,
+      "fontWeight": true,
+      "fontStyle": true,
+      "textTransform": true,
+      "letterSpacing": true
+    },
+    "spacing": {
+      "padding": true,
+      "margin": ["top", "bottom"]
+    }
+  }
+}

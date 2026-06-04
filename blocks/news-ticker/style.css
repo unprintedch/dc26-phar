@@ -1,0 +1,115 @@
+/* ── News Ticker (dc26/news-ticker) ──────────────────────────────────────────── */
+
+.dc26-ticker {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    gap: var(--wp--preset--spacing--30, 0.75rem);
+    padding-block: var(--wp--preset--spacing--20, 0.5rem);
+}
+
+/* Label (ex : "Actualités") */
+.dc26-ticker__label {
+    flex-shrink: 0;
+    font-weight: 700;
+    font-size: var(--wp--preset--font-size--small, 0.875rem);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--wp--preset--color--primary, currentColor);
+    padding-inline: var(--wp--preset--spacing--30, 0.75rem);
+    border-right: 2px solid currentColor;
+    padding-right: var(--wp--preset--spacing--30, 0.75rem);
+}
+
+/* Viewport : masque ce qui déborde */
+.dc26-ticker__viewport {
+    flex: 1;
+    overflow: hidden;
+    display: flex;
+    min-width: 0;
+}
+
+/* Track : les deux copies côte à côte */
+.dc26-ticker__track {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 0;
+    white-space: nowrap;
+
+    /* Direction gauche (défaut) */
+    animation: dc26-ticker-left var(--nt-duration, 30s) linear infinite;
+}
+
+.dc26-ticker--right .dc26-ticker__track {
+    animation-name: dc26-ticker-right;
+}
+
+/* Pause au survol */
+.dc26-ticker--pause-hover:hover .dc26-ticker__track {
+    animation-play-state: paused;
+}
+
+/* Items — héritent couleur/typo du wrapper via block supports */
+.dc26-ticker__item {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--wp--preset--spacing--30, 0.75rem);
+    padding-inline: var(--wp--preset--spacing--30, 0.75rem);
+    font-size: inherit;
+    font-weight: inherit;
+    font-style: inherit;
+    letter-spacing: inherit;
+    text-transform: inherit;
+    white-space: nowrap;
+}
+
+.dc26-ticker__item a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.dc26-ticker__item a:hover {
+    text-decoration: underline;
+}
+
+.dc26-ticker__sep {
+    opacity: 0.4;
+    font-size: 0.75em;
+}
+
+/* Keyframes */
+@keyframes dc26-ticker-left {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+}
+
+@keyframes dc26-ticker-right {
+    from { transform: translateX(-50%); }
+    to   { transform: translateX(0); }
+}
+
+/* Preview dans l'éditeur */
+.dc26-ticker--preview {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 3rem;
+    background: repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 8px,
+        rgba(0,0,0,.03) 8px,
+        rgba(0,0,0,.03) 16px
+    );
+    border: 1px dashed rgba(0,0,0,.2);
+    border-radius: 4px;
+}
+
+.dc26-ticker__preview-label {
+    font-size: var(--wp--preset--font-size--small, 0.875rem);
+    color: var(--wp--preset--color--contrast-2, #555);
+}

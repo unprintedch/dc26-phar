@@ -1,0 +1,16 @@
+{
+  "name": "dc26-phar",
+  "private": true,
+  "scripts": {
+    "dev": "npm-run-all --parallel watch:main watch:js",
+    "watch:main": "chokidar \"css/**/*.css\" \"blocks/**/*.css\" -c \"postcss ./css/style.css -o ./build/style.css\"",
+    "watch:js": "esbuild ./scripts/dc26-front.js --bundle --minify --outfile=./build/app.js --watch",
+    "build:main": "postcss ./css/style.css -o ./build/style.css",
+    "build:js": "esbuild ./scripts/dc26-front.js --bundle --minify --outfile=./build/app.js",
+    "build": "npm-run-all build:main build:js"
+  },
+  "dependencies": {
+    "gsap": "^3.13.0",
+    "swiper": "^11.1.1"
+  }
+}

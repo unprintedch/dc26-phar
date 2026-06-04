@@ -1,0 +1,95 @@
+/* ===================================
+   HEADER STYLES
+   =================================== */
+
+/* Frosted glass on scroll (override base transition) */
+header.is-style-sticky-header.is-scrolled {
+  background-color: rgba(255, 255, 255, 0.02);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+}
+
+/* Hamburger aligné à droite indépendamment du justify du bloc navigation */
+@media (max-width: 768px) {
+    header .wp-block-navigation {
+        margin-inline-start: auto;
+        justify-content: flex-end;
+    }
+    header .wp-block-navigation__responsive-container-open {
+        margin-inline-start: auto;
+    }
+
+}
+
+/* Burger icon visible sur fond clair quand le header est scrollé */
+header.is-style-sticky-header.is-scrolled .wp-block-navigation__responsive-container-open,
+header.is-style-sticky-header.is-scrolled .wp-block-navigation__responsive-container-open svg {
+    color: var(--wp--preset--color--primary);
+    fill: var(--wp--preset--color--primary);
+}
+
+/* ── Mobile nav overlay ─────────────────────────────────────────────────── */
+
+/* Overlay couvre tout le viewport quel que soit le scroll */
+.wp-block-navigation__responsive-container.is-menu-open {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    height: 100dvh !important;
+    overflow-y: auto !important;
+    z-index: 9998 !important;
+}
+
+/* Couleurs forcées en primary */
+.wp-block-navigation__responsive-container.is-menu-open,
+.wp-block-navigation__responsive-container.is-menu-open a,
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation-item__content {
+    color: var(--wp--preset--color--primary) !important;
+}
+
+/* Reset submenu : notre animation desktop (opacity:0) ne doit pas s'appliquer dans l'overlay */
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__submenu-container {
+    opacity: 1 !important;
+    transform: none !important;
+    position: static !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    pointer-events: auto !important;
+    padding: 0.25rem 0 0.25rem 1rem;
+    margin-top: 0;
+    min-width: 0;
+}
+
+/* Bouton fermeture aligné avec le burger */
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-close {
+    height: var(--site-header-height, 4rem) !important;
+    min-height: 0 !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 var(--wp--preset--spacing--50) !important;
+}
+
+/* Espacement serré entre les items */
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content {
+    gap: 0 !important;
+    padding: var(--wp--preset--spacing--50);
+    align-items: flex-start;
+}
+
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation-item {
+    padding-block: 0.4rem;
+    width: 100%;
+}
+
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__submenu-container .wp-block-navigation-item {
+    padding-block: 0.2rem;
+    font-size: 0.9em;
+}
+
+/* Overflow : cache le parallax bg derrière l'overlay */
+body:has(.wp-block-navigation__responsive-container.is-menu-open) #bg-pattern-layer {
+    visibility: hidden;
+}

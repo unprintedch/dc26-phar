@@ -1,0 +1,48 @@
+#bg-pattern-layer {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    width: max(100vw, 4000px);
+    min-height: 100vh;
+    z-index: -1;
+    pointer-events: none;
+    overflow: hidden;
+    will-change: transform;
+    /* --bg-opacity injected by PHP as inline CSS variable */
+    opacity: var(--bg-opacity, 0.1);
+}
+
+/* --tile-w / --tile-h are set as inline CSS variables by PHP */
+#bg-pattern-layer[data-mode="pattern"] {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, var(--tile-w, 400px));
+    grid-auto-rows: var(--tile-h, 400px);
+}
+
+.pattern-tile {
+    width: var(--tile-w, 400px);
+    height: var(--tile-h, 400px);
+    overflow: hidden;
+}
+
+.pattern-tile img,
+.pattern-tile svg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.bg-full-svg {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bg-full-svg img,
+.bg-full-svg svg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

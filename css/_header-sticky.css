@@ -1,0 +1,25 @@
+/* Phar override: slightly more transparent frosted glass than base (0.25 vs 0.4) */
+.is-style-sticky-header.is-scrolled > header.wp-block-group,
+.is-style-sticky-header.is-scrolled > .wp-block-group {
+    background-color: rgba(244, 244, 244, 0.25);
+}
+
+/* Phar-specific: nav links shift to primary color on scroll */
+.is-style-sticky-header .wp-block-navigation a,
+.is-style-sticky-header .wp-block-navigation-item__content,
+.is-style-sticky-header .wp-block-navigation__submenu-icon svg {
+    transition: color 200ms ease;
+}
+
+.is-style-sticky-header .wp-block-navigation__submenu-icon svg {
+    transition: stroke 200ms ease;
+}
+
+.is-style-sticky-header.is-scrolled .wp-block-navigation a,
+.is-style-sticky-header.is-scrolled .wp-block-navigation-item__content {
+    color: var(--wp--preset--color--primary);
+}
+
+.is-style-sticky-header.is-scrolled .wp-block-navigation__submenu-icon svg {
+    stroke: var(--wp--preset--color--primary);
+}

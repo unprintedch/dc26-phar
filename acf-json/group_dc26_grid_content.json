@@ -1,0 +1,234 @@
+{
+    "key": "group_dc26_grid_content",
+    "title": "BLOCK – Grille filtrée",
+    "fields": [
+        {
+            "key": "field_gc_post_type",
+            "label": "Type de contenu (CPT)",
+            "name": "gc_post_type",
+            "type": "text",
+            "instructions": "Slug du Custom Post Type à afficher (ex : partenaire, post).",
+            "required": 0,
+            "default_value": "partenaire",
+            "placeholder": "partenaire",
+            "wrapper": { "width": "33", "class": "", "id": "" }
+        },
+        {
+            "key": "field_gc_posts_per_page",
+            "label": "Éléments par page",
+            "name": "gc_posts_per_page",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "default_value": 12,
+            "min": 1,
+            "max": "",
+            "step": 1,
+            "prepend": "",
+            "append": "",
+            "wrapper": { "width": "33", "class": "", "id": "" }
+        },
+        {
+            "key": "field_gc_columns",
+            "label": "Colonnes",
+            "name": "gc_columns",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "choices": { "2": "2", "3": "3", "4": "4" },
+            "default_value": "3",
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 0,
+            "ajax": 0,
+            "wrapper": { "width": "33", "class": "", "id": "" }
+        },
+        {
+            "key": "field_gc_show_title",
+            "label": "Afficher le titre",
+            "name": "gc_show_title",
+            "type": "true_false",
+            "instructions": "Affiche le titre de l'item sous l'image.",
+            "required": 0,
+            "default_value": 1,
+            "message": "",
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "wrapper": { "width": "33", "class": "", "id": "" }
+        },
+        {
+            "key": "field_gc_image_mode",
+            "label": "Mode image",
+            "name": "gc_image_mode",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "choices": {
+                "cover": "Couverture (recadrée)",
+                "contain": "Normal (image entière)"
+            },
+            "default_value": "cover",
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 0,
+            "wrapper": { "width": "33", "class": "", "id": "" }
+        },
+        {
+            "key": "field_gc_pager_facet",
+            "label": "Facet paginateur (Load More)",
+            "name": "gc_pager_facet",
+            "type": "text",
+            "instructions": "Slug du facet FacetWP de type Pager. Laisser vide pour masquer.",
+            "required": 0,
+            "default_value": "",
+            "placeholder": "load_more",
+            "wrapper": { "width": "34", "class": "", "id": "" }
+        },
+        {
+            "key": "field_gc_tab_prefilter",
+            "label": "Pré-filtres",
+            "name": "gc_tab_prefilter",
+            "type": "tab",
+            "instructions": "",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_gc_tax_query",
+            "label": "Pré-filtres taxonomie",
+            "name": "gc_tax_query",
+            "type": "repeater",
+            "instructions": "Restreindre la grille à des termes précis (ex. : page Solution — afficher uniquement la compétence concernée).",
+            "required": 0,
+            "layout": "table",
+            "button_label": "Ajouter un filtre",
+            "min": 0,
+            "max": 0,
+            "collapsed": "",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_gc_tax",
+                    "label": "Taxonomie",
+                    "name": "gc_tax",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "choices": {},
+                    "default_value": "",
+                    "return_format": "value",
+                    "multiple": 0,
+                    "allow_null": 1,
+                    "ui": 1,
+                    "ajax": 0,
+                    "placeholder": "Choisir une taxonomie",
+                    "wrapper": { "width": "30", "class": "", "id": "" },
+                    "parent_repeater": "field_gc_tax_query"
+                },
+                {
+                    "key": "field_gc_terms",
+                    "label": "Termes",
+                    "name": "gc_terms",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "choices": {},
+                    "default_value": [],
+                    "return_format": "value",
+                    "multiple": 1,
+                    "allow_null": 1,
+                    "ui": 1,
+                    "ajax": 0,
+                    "wrapper": { "width": "50", "class": "", "id": "" },
+                    "parent_repeater": "field_gc_tax_query"
+                },
+                {
+                    "key": "field_gc_operator",
+                    "label": "Opérateur",
+                    "name": "gc_operator",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "choices": { "IN": "IN", "NOT IN": "NOT IN", "AND": "AND" },
+                    "default_value": "IN",
+                    "return_format": "value",
+                    "multiple": 0,
+                    "allow_null": 0,
+                    "ui": 0,
+                    "wrapper": { "width": "20", "class": "", "id": "" },
+                    "parent_repeater": "field_gc_tax_query"
+                }
+            ]
+        },
+        {
+            "key": "field_gc_tab_facets",
+            "label": "Filtres FacetWP",
+            "name": "gc_tab_facets",
+            "type": "tab",
+            "instructions": "",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_gc_facets",
+            "label": "Facets affichés",
+            "name": "gc_facets",
+            "type": "repeater",
+            "instructions": "Chaque ligne affiche un filtre FacetWP au-dessus de la grille. Le slug doit correspondre au nom machine du facet dans FacetWP > Facets.",
+            "required": 0,
+            "layout": "table",
+            "button_label": "Ajouter un facet",
+            "min": 0,
+            "max": 0,
+            "collapsed": "",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_gc_facet_slug",
+                    "label": "Slug du facet",
+                    "name": "gc_facet_slug",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 1,
+                    "placeholder": "competence",
+                    "wrapper": { "width": "50", "class": "", "id": "" },
+                    "parent_repeater": "field_gc_facets"
+                },
+                {
+                    "key": "field_gc_facet_label",
+                    "label": "Label (optionnel)",
+                    "name": "gc_facet_label",
+                    "type": "text",
+                    "instructions": "Texte affiché au-dessus du facet.",
+                    "required": 0,
+                    "placeholder": "Compétence",
+                    "wrapper": { "width": "50", "class": "", "id": "" },
+                    "parent_repeater": "field_gc_facets"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "dc26/grid-content"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Champs du bloc Grille filtrée (CPT, facets, pré-filtres taxo).",
+    "show_in_rest": 0,
+    "display_title": "",
+    "modified": 1778641200
+}

@@ -1,0 +1,198 @@
+{
+    "key": "group_dc26_phar_bg",
+    "title": "OPTIONS – Fond animé",
+    "fields": [
+        {
+            "key": "field_bg_enabled",
+            "label": "Activer le fond animé",
+            "name": "bg_enabled",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_bg_mode",
+            "label": "Mode",
+            "name": "bg_mode",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "pattern : grille de tuiles 400×400px — full : SVG pleine page",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_bg_enabled",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "pattern": "Pattern (tuiles)",
+                "full": "Full (pleine page)"
+            },
+            "default_value": "pattern",
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0
+        },
+        {
+            "key": "field_bg_svg_upload",
+            "label": "SVG — Upload",
+            "name": "bg_svg_upload",
+            "aria-label": "",
+            "type": "file",
+            "instructions": "Téléverser un fichier SVG. Prioritaire sur le SVG inline.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_bg_enabled",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "library": "all",
+            "min_size": "",
+            "max_size": "",
+            "mime_types": "",
+            "allow_in_bindings": 1
+        },
+        {
+            "key": "field_bg_svg_inline",
+            "label": "SVG — Inline (fallback)",
+            "name": "bg_svg_inline",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Coller le code SVG directement. Utilisé si aucun upload n'est fourni.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_bg_enabled",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "rows": 6,
+            "new_lines": "",
+            "maxlength": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_bg_opacity",
+            "label": "Opacité (%)",
+            "name": "bg_opacity",
+            "aria-label": "",
+            "type": "range",
+            "instructions": "0 = invisible, 100 = totalement opaque",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_bg_enabled",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 10,
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "prepend": "",
+            "append": "%"
+        },
+        {
+            "key": "field_bg_parallax_factor",
+            "label": "Facteur parallaxe",
+            "name": "bg_parallax_factor",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "0 = pas de parallaxe, 1 = défilement complet avec la page. Recommandé : 0.2",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_bg_enabled",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "0.2",
+            "placeholder": "0.2",
+            "prepend": "",
+            "append": "",
+            "min": 0,
+            "max": 1,
+            "step": "0.05"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "site-settings"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Configuration du fond animé parallaxe pour PHAR",
+    "show_in_rest": 0,
+    "display_title": "",
+    "modified": 1774527302
+}

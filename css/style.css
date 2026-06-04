@@ -1,0 +1,58 @@
+/* Phar overrides — le CSS du parent (dc26-base) est chargé automatiquement par WordPress */
+@import "_header.css";
+@import "_header-sticky.css";
+@import "_block-style.css";
+@import "_bg-animated.css";
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Décalage pour la barre d'administration WordPress */
+.logged-in .header-sticky {
+    top: 32px !important;
+}
+
+/* Décalage du contenu pour le header sticky */
+body {
+    padding-top: 0;
+    transition: padding-top 0.3s ease;
+}
+
+/* Remove global block gap before footer only */
+:where(.wp-site-blocks) > footer {
+    margin-block-start: 0;
+}
+
+.logged-in .dc26-navigation {
+    padding-top: 2rem;
+}
+
+h1, h2, h3, h4, h5, h6, p, a, summary, li, strong, span, div, label, button, input, select, textarea {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6, blockquote, caption, figcaption, p {
+    text-wrap: pretty;
+}
+
+.more-link {
+    display: block;
+}
+
+.wp-block-page-list a,
+.wp-block-navigation .wp-block-page-list a {
+    text-decoration: none !important;
+}
+
+/* Espacement proportionnel après paragraphes et listes */
+.wp-block-paragraph,
+.wp-block-list {
+    margin-bottom: 1em;
+}
+
+.wp-block-list ul,
+.wp-block-list ol {
+    margin-bottom: 0;
+}

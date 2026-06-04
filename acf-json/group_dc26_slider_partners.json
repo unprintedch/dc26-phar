@@ -1,0 +1,107 @@
+{
+    "key": "group_dc26_slider_partners",
+    "title": "BLOCK – Partenaires Slider",
+    "fields": [
+        {
+            "key": "field_sp_filter_tax",
+            "label": "Taxonomie (filtre)",
+            "name": "sp_filter_tax",
+            "type": "select",
+            "instructions": "Laisser vide pour afficher tous les partenaires.",
+            "required": 0,
+            "choices": {},
+            "default_value": "",
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 1,
+            "ui": 1,
+            "ajax": 0,
+            "placeholder": "Tous les partenaires",
+            "wrapper": { "width": "50", "class": "", "id": "" }
+        },
+        {
+            "key": "field_sp_filter_terms",
+            "label": "Termes",
+            "name": "sp_filter_terms",
+            "type": "select",
+            "instructions": "Termes à inclure dans le slider.",
+            "required": 0,
+            "choices": {},
+            "default_value": [],
+            "return_format": "value",
+            "multiple": 1,
+            "allow_null": 1,
+            "ui": 1,
+            "ajax": 0,
+            "wrapper": { "width": "50", "class": "", "id": "" }
+        },
+        {
+            "key": "field_sp_partners",
+            "label": "Partenaires (manuel — héritage)",
+            "name": "partners",
+            "type": "repeater",
+            "instructions": "Non utilisé si le filtre CPT est actif.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": { "width": "", "class": "", "id": "" },
+            "layout": "table",
+            "min": 0,
+            "max": 0,
+            "collapsed": "",
+            "button_label": "Ajouter un partenaire",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_sp_logo",
+                    "label": "Logo",
+                    "name": "logo",
+                    "type": "image",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": { "width": "50", "class": "", "id": "" },
+                    "return_format": "array",
+                    "preview_size": "thumbnail",
+                    "library": "all",
+                    "min_width": "", "min_height": "", "min_size": "",
+                    "max_width": "", "max_height": "", "max_size": "",
+                    "mime_types": "",
+                    "parent_repeater": "field_sp_partners"
+                },
+                {
+                    "key": "field_sp_link",
+                    "label": "Lien (optionnel)",
+                    "name": "link",
+                    "type": "url",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": { "width": "50", "class": "", "id": "" },
+                    "default_value": "",
+                    "placeholder": "https://",
+                    "parent_repeater": "field_sp_partners"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "dc26/slider-partners"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Champs pour le bloc Partenaires Slider",
+    "show_in_rest": 0,
+    "display_title": "",
+    "modified": 1778641200
+}

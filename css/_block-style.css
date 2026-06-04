@@ -1,0 +1,35 @@
+/* Phar-specific: hex-check list style with SVG asset */
+ul.wp-block-list.is-style-dc26-hex-check {
+  list-style: none;
+  padding-left: 0;
+}
+
+ul.wp-block-list.is-style-dc26-hex-check li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding-left: 0;
+  margin-bottom: 0.6rem;
+}
+
+ul.wp-block-list.is-style-dc26-hex-check li::before {
+  content: "";
+  flex-shrink: 0;
+  width: calc(1em + 4px);
+  height: calc(1em + 4px);
+  background: url("../assets/img/hexagon-check-light-full.svg") no-repeat center / contain;
+}
+
+/* Media-text : clip au border-radius du wrapper grid */
+.wp-block-media-text {
+    overflow: hidden;
+}
+
+@media (max-width: 600px) {
+    .wp-block-media-text__content {
+        padding: var(--wp--preset--spacing--50) !important;
+    }
+    .wp-block-media-text {
+        margin-block: var(--wp--preset--spacing--50) !important;
+    }
+}

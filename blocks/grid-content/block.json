@@ -1,0 +1,19 @@
+{
+  "name": "dc26/grid-content",
+  "title": "Grille filtrée",
+  "description": "Grille de contenus paginée et filtrée via FacetWP.",
+  "category": "dc26",
+  "icon": "grid-view",
+  "keywords": ["grid", "grille", "filtre", "facetwp", "cpt"],
+  "acf": {
+    "mode": "edit",
+    "renderTemplate": "render.php",
+    "blockVersion": 3
+  },
+  "supports": {
+    "html": false,
+    "align": ["wide", "full"],
+    "anchor": true,
+    "customClassName": true
+  }
+}

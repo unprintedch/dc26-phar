@@ -1,0 +1,129 @@
+{
+    "key": "group_dc26_news_ticker",
+    "title": "BLOCK – News Ticker",
+    "fields": [
+        {
+            "key": "field_nt_label",
+            "label": "Label (préfixe)",
+            "name": "nt_label",
+            "type": "text",
+            "instructions": "Texte affiché avant le ticker (ex : Actualités). Laisser vide pour masquer.",
+            "required": 0,
+            "default_value": "",
+            "placeholder": "Actualités",
+            "wrapper": { "width": "33", "class": "", "id": "" }
+        },
+        {
+            "key": "field_nt_speed",
+            "label": "Vitesse (secondes / boucle)",
+            "name": "nt_speed",
+            "type": "number",
+            "instructions": "Durée d'un cycle complet. Plus petit = plus rapide.",
+            "required": 0,
+            "default_value": 30,
+            "min": 5,
+            "max": 120,
+            "step": 1,
+            "wrapper": { "width": "22", "class": "", "id": "" }
+        },
+        {
+            "key": "field_nt_direction",
+            "label": "Direction",
+            "name": "nt_direction",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "choices": {
+                "left": "← Gauche (classique)",
+                "right": "→ Droite"
+            },
+            "default_value": "left",
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 0,
+            "wrapper": { "width": "22", "class": "", "id": "" }
+        },
+        {
+            "key": "field_nt_separator",
+            "label": "Séparateur",
+            "name": "nt_separator",
+            "type": "text",
+            "instructions": "Symbole entre les items.",
+            "required": 0,
+            "default_value": "·",
+            "placeholder": "· / / — / ★",
+            "wrapper": { "width": "11", "class": "", "id": "" }
+        },
+        {
+            "key": "field_nt_pause_hover",
+            "label": "Pause au survol",
+            "name": "nt_pause_hover",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "default_value": 1,
+            "message": "",
+            "ui": 1,
+            "wrapper": { "width": "12", "class": "", "id": "" }
+        },
+        {
+            "key": "field_nt_items",
+            "label": "Textes",
+            "name": "nt_items",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "layout": "table",
+            "button_label": "Ajouter un item",
+            "min": 1,
+            "max": 0,
+            "collapsed": "",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_nt_text",
+                    "label": "Texte",
+                    "name": "nt_text",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 1,
+                    "placeholder": "Notre nouveau service est disponible",
+                    "wrapper": { "width": "70", "class": "", "id": "" },
+                    "parent_repeater": "field_nt_items"
+                },
+                {
+                    "key": "field_nt_link",
+                    "label": "Lien (optionnel)",
+                    "name": "nt_link",
+                    "type": "url",
+                    "instructions": "",
+                    "required": 0,
+                    "placeholder": "https://",
+                    "wrapper": { "width": "30", "class": "", "id": "" },
+                    "parent_repeater": "field_nt_items"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "dc26/news-ticker"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Champs du bloc News Ticker (textes défilants, vitesse, direction, séparateur).",
+    "show_in_rest": 0,
+    "display_title": "",
+    "modified": 1778641200
+}
