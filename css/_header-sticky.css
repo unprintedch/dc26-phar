@@ -23,3 +23,34 @@
 .is-style-sticky-header.is-scrolled .wp-block-navigation__submenu-icon svg {
     stroke: var(--wp--preset--color--primary);
 }
+
+/* Sélecteur de langue (EN/FR/DE) : reste blanc en permanence, insensible au
+   scroll — seule la langue courante (pas de lien <a>) ressort en gras.
+   Le texte est dans un <span class="has-primary-color"> imbriqué (classe
+   utilitaire WP en !important) : on cible ce span directement. */
+.horizontal-list .wp-block-navigation-item__content,
+.horizontal-list .wp-block-navigation-item__label,
+.is-style-sticky-header.is-scrolled .horizontal-list .wp-block-navigation-item__content,
+.is-style-sticky-header.is-scrolled .horizontal-list .wp-block-navigation-item__label {
+    color: #fff !important;
+    font-weight: 400;
+}
+
+.horizontal-list .wp-block-navigation-item:not(:has(a)) .wp-block-navigation-item__label,
+.horizontal-list .wp-block-navigation-item:not(:has(a)) {
+    color: #fff !important;
+    font-weight: 700;
+}
+
+/* Bouton Marketplace : reste blanc (texte + bordure) en permanence — le fond
+   givré au scroll laisse passer des images en arrière-plan, la couleur
+   primary devient illisible dessus. */
+.is-style-sticky-header .wp-block-buttons .wp-block-button__link {
+    color: #fff !important;
+    border-color: #fff !important;
+    white-space: nowrap;
+}
+
+.is-style-sticky-header .wp-block-buttons {
+    flex-shrink: 0;
+}
