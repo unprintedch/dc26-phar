@@ -1,3 +1,33 @@
+/* Phar renomme ses templates "no title" au pluriel (pages-no-title*.html) alors
+   que dc26-base cible ".page-template-page-no-title" (singulier) dans
+   _header-sticky.css pour donner au header transparent un position:fixed qui
+   chevauche le hero. Sans ce rappel, le header phar reste en flux normal sur
+   fond blanc avec du texte blanc → navigation invisible sur toutes les pages
+   utilisant "pages-no-title" ou "pages-no-title-light-header". */
+.page-template-pages-no-title header.wp-block-template-part.is-style-sticky-header,
+.page-template-pages-no-title-light-header header.wp-block-template-part.is-style-sticky-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.admin-bar.page-template-pages-no-title header.wp-block-template-part.is-style-sticky-header,
+.admin-bar.page-template-pages-no-title-light-header header.wp-block-template-part.is-style-sticky-header {
+    top: var(--wp-admin--admin-bar--height, 0px);
+}
+
+.page-template-pages-no-title .wp-site-blocks > :first-child,
+.page-template-pages-no-title-light-header .wp-site-blocks > :first-child {
+    margin-block-start: 0;
+}
+
+.page-template-pages-no-title .wp-site-blocks > .wp-block-post-content,
+.page-template-pages-no-title-light-header .wp-site-blocks > .wp-block-post-content {
+    margin-block-start: 0;
+}
+
 /* Phar override: slightly more transparent frosted glass than base (0.25 vs 0.4) */
 .is-style-sticky-header.is-scrolled > header.wp-block-group,
 .is-style-sticky-header.is-scrolled > .wp-block-group {

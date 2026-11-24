@@ -21,6 +21,7 @@
 - `sites/phar/deploy.sh` — `./deploy.sh` → staging | `./deploy.sh prod` → production (confirmation requise)
 
 ## Open tasks
+- [ ] Déployer le fix "templates collés au header" (commit `41bf57d`, poussé sur `dc26-phar` le 2026-09-22, pas encore déployé) — remis à plus tard, à traiter avec le reste de phar
 - [ ] Activer le thème sur dev.phar.swiss (WP Admin → Apparence)
 - [ ] Syncer les ACF JSON (Admin → ACF → Sync)
 - [ ] Vérifier slider-partners sur dev.phar.swiss
